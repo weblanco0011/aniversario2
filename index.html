@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices 2 Meses, Mi Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- El audio ahora tiene un ID para ser controlado y ya no tiene 'autoplay' -->
+    <audio id="miAudio" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
+
+    <!-- ========= PANTALLA DE BIENVENIDA PARA INICIAR EL AUDIO ========= -->
+    <div id="welcome-screen">
+        <h1>Una sorpresa para ti...</h1>
+        <p>Haz clic en el corazón para empezar</p>
+        <button id="playButton">❤️</button>
+    </div>
+
+    <!-- ========= CONTENIDO PRINCIPAL (Oculto hasta que se presione el botón) ========= -->
+    <div id="main-content" style="display:none;">
+
+        <!-- ========= Encabezado y Mensaje de Bienvenida ========= -->
+        <header>
+            <!-- CAMBIA AQUÍ el apodo cariñoso -->
+            <h1>Felices 2 Meses, [Su Apodo Cariñoso]</h1>
+            <h2>He creado este pequeño rincón de nuestro mundo para ti.</h2>
+            <p>Sube el volumen y déjate llevar por nuestros recuerdos...</p>
+        </header>
+
+        <main>
+            <!-- ========= Sección del Contador de Momentos ========= -->
+            <section class="counter-section">
+                <h2>Nuestro Tiempo Juntos en Números</h2>
+                <div class="counters">
+                    <div class="counter-item">
+                        <span class="number">60</span>
+                        <p>Días de risas interminables</p>
+                    </div>
+                    <div class="counter-item">
+                        <span class="number">8</span>
+                        <p>Semanas construyendo nuestra historia</p>
+                    </div>
+                    <div class="counter-item">
+                        <span class="number">∞</span>
+                        <p>Motivos por los que te amo</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========= Galería de Fotos ========= -->
+            <section class="gallery-section">
+                <h2>Nuestros Primeros Recuerdos</h2>
+                <div class="gallery">
+                    <!-- Foto 1 -->
+                    <div class="gallery-item">
+                        <!-- CAMBIA 'foto1.jpg' por el nombre de tu imagen -->
+                        <img src="foto1.jpg" alt="Foto de nuestra primera cita">
+                        <!-- CAMBIA el texto de la descripción -->
+                        <p>Nuestra primera cita. ¡No podía dejar de sonreír!</p>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="gallery-item">
+                        <!-- CAMBIA 'foto2.jpg' por el nombre de tu imagen -->
+                        <img src="foto2.jpg" alt="Foto divertida juntos">
+                        <!-- CAMBIA el texto de la descripción -->
+                        <p>Ese día que no paramos de reír.</p>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div class="gallery-item">
+                        <!-- CAMBIA 'foto3.jpg' por el nombre de tu imagen -->
+                        <img src="foto3.jpg" alt="Foto especial para ti">
+                        <!-- CAMBIA el texto de la descripción -->
+                        <p>Mi foto favorita de todas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========= Lista de "Cosas que Amo" - VERSIÓN A DISTANCIA (ACTUALIZADA) ========= -->
+            <section class="love-list-section">
+                <h2>Cosas que He Amado de Nuestros Primeros 60 Días</h2>
+                <ol>
+                    <li>
+                        Despertar y ver tu mensaje de 'buenos días', sabiendo que soy tu primer pensamiento a pesar de los kilómetros.
+                    </li>
+                    <li>
+                        La forma en que se ilumina toda la pantalla cuando sonríes en nuestras videollamadas. Haces que la distancia desaparezca por un momento.
+                    </li>
+                    <li>
+                        Nuestras tardes jugando Skribbl. Adoro lo mucho que nos reímos con tus dibujos, incluso cuando no tienen ningún sentido para el resto del mundo.
+                    </li>
+                    <li>
+                        Escuchar tu voz en un audio inesperado. Es como recibir un abrazo que viaja cientos de kilómetros solo para mí.
+                    </li>
+                    <li>
+                        La emoción que siento cada vez que hablamos de nuestro próximo encuentro. Planear nuestro futuro hace que todo valga la pena.
+                    </li>
+                    <li>
+                        Quedarnos dormidos juntos en llamada. Es lo más cerca que puedo estar de despertar a tu lado, y me da una paz increíble.
+                    </li>
+                    <li>
+                        Cuando me cuentas los detalles más pequeños de tu día. Me haces sentir que estoy allí contigo, viviendo cada momento a tu lado.
+                    </li>
+                    <li>
+                        Sentir tu apoyo incondicional desde lejos. Saber que, pase lo que pase, tengo a alguien increíble esperándome.
+                    </li>
+                    <li>
+                        La confianza total que hemos construido. Es la base que hace que nuestro amor sea tan fuerte y real.
+                    </li>
+                    <li>
+                        Saber que cada día que pasa es un día menos para volver a tenerte en mis brazos.
+                    </li>
+                </ol>
+            </section>
+        </main>
+
+        <!-- ========= Mensaje Final y Cierre ========= -->
+        <footer>
+            <h2>Por Muchos Meses Más a Tu Lado</h2>
+            <p>Estos dos meses han sido solo el comienzo de nuestra aventura. Gracias por hacer cada día especial. Esta página y el audio que escuchas de fondo son solo una pequeña muestra de todo lo que siento por ti. Te amo.</p>
+            <p class="signature">Con todo mi amor, WILLIAM</p>
+        </footer> 
+    </div>
+
+    <!-- ========= SCRIPT PARA ACTIVAR EL AUDIO Y EL CONTENIDO ========= -->
+    <script>
+        window.onload = function() {
+            const playButton = document.getElementById('playButton');
+            const miAudio = document.getElementById('miAudio');
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const mainContent = document.getElementById('main-content');
+
+            playButton.addEventListener('click', function() {
+                miAudio.play();
+                welcomeScreen.style.display = 'none';
+                mainContent.style.display = 'block';
+            });
+        }
+    </script>
+
+</body>
+</html>

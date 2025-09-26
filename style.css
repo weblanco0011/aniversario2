@@ -1,0 +1,204 @@
+/* ========= CONFIGURACIÓN GENERAL ========= */
+body {
+    background-color: #FFF0F5; /* Fondo rosa muy suave (Lavender Blush) */
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #333333; /* Texto principal en gris oscuro para buena legibilidad */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Oculta el reproductor de audio, ya que solo queremos el sonido de fondo */
+audio {
+    display: none;
+}
+
+/* ========= ESTILOS PARA LOS TÍTULOS ========= */
+h1, h2 {
+    color: #FFC0CB; /* Títulos principales en un rosa más visible (Pink) */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra de texto suave */
+}
+
+/* ========= ENCABEZADO ========= */
+header h1 {
+    font-size: 3em; /* Tamaño grande para el título principal */
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-weight: normal; /* Texto más ligero que el título principal */
+    margin-top: 10px;
+}
+
+header p {
+    font-style: italic;
+    color: #555;
+}
+
+/* Contenedor principal para centrar el contenido */
+main {
+    max-width: 900px;
+    margin: 0 auto; /* Centra el contenido principal */
+}
+
+/* ========= SECCIÓN DEL CONTADOR DE TIEMPO ========= */
+.counter-section {
+    background-color: white;
+    padding: 25px;
+    margin: 40px auto;
+    border-radius: 15px; /* Bordes más redondeados */
+    border: 2px solid #FFB6C1; /* Borde en rosa intermedio (Light Pink) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.counters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Para que se vea bien en móviles */
+}
+
+.counter-item {
+    padding: 10px;
+}
+
+.counter-item .number {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #FFC0CB; /* Números en rosa */
+}
+
+.counter-item p {
+    margin-top: 5px;
+    color: #555;
+}
+
+/* ========= SECCIÓN DE LA GALERÍA DE FOTOS ========= */
+.gallery-section {
+    margin: 40px auto;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacio entre las fotos */
+    flex-wrap: wrap; /* Permite que las fotos se reorganicen en pantallas pequeñas */
+}
+
+.gallery-item img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-radius: 15px;
+    border: 6px solid white;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+/* Efecto para que la foto se agrande un poco al pasar el mouse por encima */
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========= SECCIÓN DE LA LISTA "COSAS QUE AMO" ========= */
+.love-list-section {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: left; /* Alinea el texto de la lista a la izquierda */
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #FFB6C1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.love-list-section ol {
+    list-style: none; /* Quita los números por defecto */
+    counter-reset: love-counter; /* Inicia un contador para la lista */
+    padding-left: 0;
+}
+
+.love-list-section li {
+    counter-increment: love-counter; /* Incrementa el contador por cada elemento 'li' */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Crea un número personalizado antes de cada elemento de la lista */
+.love-list-section li::before {
+    content: counter(love-counter) ". "; /* Muestra el número del contador */
+    font-weight: bold;
+    color: #FFC0CB; /* Color del número en rosa */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* ========= PIE DE PÁGINA ========= */
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #FFB6C1; /* Línea divisoria sutil */
+}
+
+footer .signature {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* ========= ESTILO PARA LA PANTALLA DE BIENVENIDA (AÑADIDO) ========= */
+#welcome-screen {
+    position: fixed; /* Ocupa toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF0F5; /* Mismo fondo rosa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Se asegura que esté por encima de todo */
+}
+
+#welcome-screen h1 {
+    font-size: 2.5em;
+}
+
+#playButton {
+    background: none;
+    border: none;
+    font-size: 5em; /* Corazón grande */
+    cursor: pointer;
+    animation: pulse 2s infinite; /* Animación de latido */
+}
+
+#playButton:hover {
+    transform: scale(1.2); /* Efecto al pasar el mouse */
+    animation: none; /* Detiene el latido al pasar el mouse */
+}
+
+/* Animación de latido para el corazón */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
